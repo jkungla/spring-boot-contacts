@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Raleway:400,300,600" />
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/normalize/4.0.0/normalize.min.css" />
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css" />
+    <title>Contact data management application</title>
+</head>
+<body>
+<div class="container">
+    <form method="post" th:action="@{/contacts}" th:object="${newContact}">
+        <div class="row">
+            <div class="four columns">
+                <input type="text" placeholder="Your full name" class="u-full-width" th:field="*{name}" />
+                <span th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Name errors</span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="four columns">
+                <input type="email" placeholder="Your Email address" class="u-full-width" th:field="*{email}" />
+                <span th:if="${#fields.hasErrors('email')}" th:errors="*{email}">Email errors</span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="four columns">
+                <input type="text" placeholder="Your full address" class="u-full-width" th:field="*{address}" />
+                <span th:if="${#fields.hasErrors('address')}" th:errors="*{address}">Address errors</span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="three columns">
+                <button type="submit" class="button-primary u-full-width">Add</button>
+            </div>
+        </div>
+    </form>
+</div>
+</body>
+</html>

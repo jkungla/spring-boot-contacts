@@ -1,3 +1,6 @@
+Development jookseb hetkel:
+http://85.253.97.239:8080/
+
 Arendaja kodutöö:
 
 Testülesanne on järgmine:
